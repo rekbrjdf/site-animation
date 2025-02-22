@@ -12,7 +12,7 @@ const newsUpdate = [
 
 export async function generateStaticParams() {
   try {
-    const res = await fetch(`${getApiHost()}/news-posts`);
+    const res = await fetch(`${getApiHost()}/news-posts`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch news posts');
     const posts = await res.json();
     return posts.map((post) => ({ id: post.id.toString() }));
