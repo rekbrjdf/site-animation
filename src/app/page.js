@@ -8,7 +8,7 @@ import USPMobile from './components/mobile/USP';
 import USPDesktop from './components/desktop/USP';
 import Video from './components/adaptive/Video';
 import styles from './styles.module.scss';
-import News from './components/adaptive/News';
+// import News from './components/adaptive/News';
 import Words from './components/adaptive/Words';
 import Lobby from './components/adaptive/Lobby';
 import presenters from './presenters.json';
@@ -23,7 +23,7 @@ export default function Home() {
       <Lobby />
       <PresentersByDevice data={presenters} />
       <PickByDeviceType Desktop={PartnersDesktop} Mobile={PartnersMobile} />
-      <News />
+      {/* <News /> */}
     </main>
   );
 }
