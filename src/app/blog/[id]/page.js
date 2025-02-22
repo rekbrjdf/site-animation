@@ -10,10 +10,34 @@ const newsUpdate = [
   },
 ];
 
+export async function generateStaticParams() {
+  try {
+    const res = await fetch(`${getApiHost()}/news-posts`);
+    if (!res.ok) throw new Error('Failed to fetch news posts');
+    const posts = await res.json();
+    return posts.map((post) => ({ id: post.id.toString() }));
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
 async function BlogDetailed({ params }) {
   const { id } = params;
 
-  const news = await (await fetch(`${getApiHost()}/news-posts/${id}`)).json();
+  let news = null;
+  try {
+    const res = await fetch(`${getApiHost()}/news-posts/${id}`);
+    if (!res.ok) throw new Error('Failed to fetch news');
+    news = await res.json();
+  } catch (error) {
+    console.error(error);
+    return (
+      <main>
+        <p>Error loading news article.</p>
+      </main>
+    );
+  }
 
   return (
     <main>
