@@ -1,0 +1,15 @@
+@import "public/scss/mixins";
+
+.map {
+    @include find-value-3pts-vw (margin-bottom, 75, 120, 180);
+    @include find-value-3pts-vw (padding-right, 26, 29, 64);
+    @include find-value-3pts-vw (padding-left, 26, 29, 64);
+
+    overflow: auto;
+
+    &__background-container {
+        position: relative;
+        width: 100%;
+        min-width: 800px;
+    }
+}

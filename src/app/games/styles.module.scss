@@ -1,0 +1,9 @@
+@import "public/scss/mixins";
+
+.games {
+    padding: 0 40px;
+
+    @include media-mobile{
+        padding: 0 16px;
+      }
+}

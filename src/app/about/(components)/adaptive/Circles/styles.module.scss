@@ -1,0 +1,53 @@
+@import "public/scss/mixins";
+
+.circles {
+  display: flex;
+  width: min-content;
+
+  @include media-mobile {
+    flex-direction: column;
+    margin-top: 120px
+  }
+
+  &__circle {
+    @include find-value-3pts-vw(width, 328, 150, 200);
+    @include find-value-3pts-vw(height, 328, 150, 200);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid rgba(12, 12, 12, 1);
+    border-radius: 50%;
+    background-color: rgba(18, 18, 18, 1);
+
+    &:not(:first-of-type) {
+      transform: translateX(calc(-10% * var(--index)));
+    }
+
+    @include media-mobile {
+      &:not(:first-of-type) {
+        transform: translateY(calc(-5% * var(--index)));
+      }
+    }
+
+    p {
+      width: min-content;
+      color: rgba(103, 103, 103, 1);
+      line-height: 100%;
+      text-align: center;
+      @include find-value-3pts-vw(font-size, 24, 16, 18);
+      @include find-value-3pts-vw(letter-spacing, -0.96, -0.64, -0.72);
+
+      @include media-mobile {
+        width: auto;
+      }
+    }
+  }
+
+  &__label {
+    @include find-value-3pts-vw(font-size, 124, 40, 60);
+
+    color: white;
+  }
+}

@@ -1,0 +1,66 @@
+@import 'public/scss/mixins';
+
+.presenters {
+  $root: &;
+
+  position: relative;
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  grid-gap: find-value-1pts-vh-fhd(24) find-value-1pts-vw-fhd(24);
+  padding: 0 find-value-1pts-vw-fhd(40);
+  padding-top: find-value-2pts-vw(160, 240);
+
+  &__left,
+  &__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    & > div {
+      & > img {
+        animation: fade-in 0.3s linear forwards;
+      }
+
+      position: sticky;
+      top: find-value-2pts-vw(120, 240);
+      right: 0;
+      left: 0;
+      margin-bottom: find-value-1pts-vh-fhd(24);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &__left {
+    & > div > h3 {
+      transform: translateX(-100%);
+      animation: text-reveal 1s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+      animation-delay: 0.2s;
+    }
+  }
+
+  &__animated-image {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-reveal {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,56 @@
+@import 'public/scss/mixins';
+
+.slider {
+  $root: &;
+
+  position: relative;
+  height: calc(100 * var(--vh));
+  padding: 0 find-value-1pts-vw-mobile(16);
+
+  &__swiper {
+    margin-bottom: find-value-1pts-vh-mobile(60);
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: var(--item-width);
+    padding: find-value-1pts-vw-fhd(24);
+    border-radius: 40px;
+    background: #121212;
+    @include media-mobile {
+      padding: find-value-1pts-vw-mobile(16);
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: find-value-2pts-vw(106, 96);
+    color: #fff;
+    font-size: find-value-2pts-vw(40, 48);
+    letter-spacing: -1.6px;
+    opacity: 0.8;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -24px;
+      bottom: -24px;
+      left: -24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__content {
+    color: #676767;
+    @include find-value-3pts-vw(font-size, 24, 32, 32);
+
+    letter-spacing: -1.28px;
+
+    span {
+      color: #fff;
+    }
+  }
+}

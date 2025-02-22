@@ -1,0 +1,31 @@
+@import 'public/scss/mixins';
+
+.wrapper {
+  &__send-form {
+    padding: 0 40px;
+    @include find-value-3pts-vw(margin-bottom, 120, 80, 120);
+    @include find-value-3pts-vw(margin-top, 0, 80, 120);
+
+    @include media-mobile {
+      padding: 0 16px;
+    }
+  }
+
+  &__first-screen {
+    padding: find-value-1pts-vw-fhd(220) find-value-1pts-vw-fhd(392) find-value-1pts-vw-fhd(120);
+    background: url('../../res/img/demo-fon.png') 0 0 / contain no-repeat;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: -0.08em;
+    text-align: center;
+    @include find-value-3pts-vw(font-size, 40, 80, 100);
+    @include find-value-3pts-vw(line-height, 40, 80, 100);
+
+    @include media-mobile {
+      padding: find-value-1pts-vw-mobile(112) find-value-1pts-vw-mobile(16);
+      background-position: 55% 0;
+      background-size: 280%;
+      text-align: left;
+    }
+  }
+}

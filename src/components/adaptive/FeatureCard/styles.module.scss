@@ -1,0 +1,44 @@
+@import 'public/scss/mixins';
+
+.feature-card {
+  flex: 1 1 33.3333%;
+
+  height: find-value-1pts-vw-fhd(600);
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border-radius: 40px;
+  background: #121212;
+
+  @include media-desk {
+    aspect-ratio: 1 / 1;
+  }
+
+  &__icon {
+    max-height: find-value-1pts-vw-fhd(400);
+    @include media-mobile {
+      max-height: find-value-1pts-vw-mobile(210);
+    }
+  }
+
+  &__label {
+    color: #fff;
+    text-align: left;
+    font-size: find-value-1pts-vw-fhd(48);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.92px;
+    align-self: flex-end;
+    width: 100%;
+
+    white-space: pre-wrap;
+
+    @include media-mobile {
+      font-size: find-value-1pts-vw-mobile(24);
+    }
+  }
+}

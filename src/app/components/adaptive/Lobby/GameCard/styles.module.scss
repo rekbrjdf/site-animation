@@ -1,0 +1,115 @@
+@import "public/scss/mixins";
+
+.container{
+  position: relative;
+  width: 100%;
+  height: 35.4vw;
+  margin-top: 24px;
+  @include media-mobile{
+    height: auto;
+    margin-top: 16px;
+  }
+
+  &:first-child{
+    margin-top: 40px;
+    @include media-mobile{
+      margin-top: 24px;
+    }
+  }
+
+  &__image{
+    img{
+      border-radius: 40px;
+      @include media-mobile{
+        border-radius: 24px;
+      }
+    }
+  }
+
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    @include media-mobile{
+      flex-direction: column;
+      height: calc(100% - 52px);
+    }
+  }
+
+  &__tags{
+    display: flex;
+    gap: 8px;
+    @include media-mobile{
+      gap: 4px;
+    }
+  }
+
+  &__tag{
+    height: max-content;
+    padding: 8px 16px;
+    border-radius: 90px;
+    background:  rgba(#E0E0E0, 0.05);
+    color: rgba(#FFF, 0.54);
+    font-weight: 400;
+    font-size: clamp(12px,1.25vw ,24px);
+    letter-spacing: -0.05vw;
+    backdrop-filter: blur(22.5px);
+    @include media-mobile{
+      padding: 8px 12px;
+    }
+  }
+
+  &__card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    inset: 0;
+    @include media-mobile{
+      padding: 12px;
+    }
+  }
+
+  &__online{
+    width: max-content;
+    height: max-content;
+    padding: 8px 16px;
+    border-radius: 90px;
+    background-color: #FFF;
+    @include media-mobile{
+      padding: 8px 12px;
+    }
+  }
+
+  &__title{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: #A5A3A3;
+    font-weight: 500;
+    font-size: clamp(12px, 1.25vw, 24px);
+    letter-spacing: -0.96px;
+
+   &::before{
+     content: '';
+     position: relative;
+     display: block;
+     width: 11px;
+     height: 11px;
+     border-radius: 50%;
+     background: #2CE028;
+   }
+  }
+
+  &__name{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 24px;
+    color: #FFF;
+    font-weight: 400;
+    font-size: clamp(32px,3.3vw, 64px);
+    opacity: 0.8;
+    @include media-mobile{
+      margin-bottom: 12px;
+    }
+  }
+}

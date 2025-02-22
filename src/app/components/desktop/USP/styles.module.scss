@@ -1,0 +1,78 @@
+@import "public/scss/mixins";
+
+.section-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: calc(var(--item-width) * var(--item-count));
+  padding-top: 0;
+  padding-bottom: 0;
+  @include media-mobile {
+    --item-width: 90vw !important;
+  }
+  @include find-value-3pts-vw(padding, 16, 40, 40);
+
+  &__sticky-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: calc(100 * var(--vh));
+  }
+
+  &__scroll-ctn {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    overflow: auto;
+    width: max-content;
+    height: auto;
+    @include media-mobile {
+      align-items: center;
+      height: 100%; 
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: var(--item-width);
+    padding: find-value-1pts-vw-fhd(24);
+    border-radius: 40px;
+    background: #121212;
+    @include media-mobile {
+      padding: find-value-1pts-vw-mobile(16);
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: find-value-2pts-vw(106, 96);
+    color: #fff;
+    font-size: find-value-2pts-vw(40, 48);
+    letter-spacing: -1.6px;
+    opacity: 0.8;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      bottom: -24px;
+      left: -24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__content {
+    color: #676767;
+    @include find-value-3pts-vw(font-size, 24, 28, 28);
+
+    letter-spacing: -1.28px;
+
+    span {
+      color: #fff;
+    }
+  }
+}

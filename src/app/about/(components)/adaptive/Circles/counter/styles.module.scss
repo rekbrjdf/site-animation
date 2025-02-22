@@ -1,0 +1,9 @@
+@import "public/scss/mixins";
+
+.counter {
+  @include find-value-3pts-vw(font-size, 124, 40, 60);
+  @include find-value-3pts-vw(letter-spacing, -12.4, -4, -6);
+
+  font-weight: 300; 
+  line-height: normal; 
+}

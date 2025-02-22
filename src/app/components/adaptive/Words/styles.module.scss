@@ -1,0 +1,57 @@
+@import 'public/scss/mixins';
+
+.main {
+  height: 150dvh;
+  margin: 200px 0;
+  @include media-mobile {
+    margin: find-value-1pts-vh-mobile(120) 0 find-value-1pts-vh-mobile(120);
+  }
+}
+
+.words {
+  @include find-value-3pts-vw(font-size, 24, 56, 80);
+  @include find-value-3pts-vw(letter-spacing, -0.96, -2.24, -3.2);
+
+  position: sticky;
+  top: 50%;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  color: #fff;
+  text-align: center;
+
+  &__first-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__word {
+    display: inline-flex;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: transform 200ms;
+
+    @include media-mobile {
+      border-radius: 12px;
+    }
+
+    &-violet {
+      background: #9238f5;
+    }
+
+    &-blue {
+      background: #5404ff;
+    }
+
+    &-black {
+      background: #1c1c1c;
+    }
+
+    &-white {
+      background: #fff;
+      color: rgba(146, 56, 245, 1);
+    }
+  }
+}

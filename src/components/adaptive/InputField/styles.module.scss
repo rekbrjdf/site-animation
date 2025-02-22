@@ -1,0 +1,49 @@
+@import "public/scss/mixins";
+
+.input {
+  width: 100%;
+  padding: 24px 0;
+  border: none;
+  border-bottom: 1.5px solid #676767;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  @include find-value-3pts-vw(font-size, 24, 24, 32);
+  @include find-value-3pts-vw(line-height, 29, 29, 38);
+
+  &_error {
+    border-color: #f00;
+    color: #f00;
+  }
+
+&::placeholder {
+  @include find-value-3pts-vw(font-size, 24, 24, 32);
+
+}
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    background-clip: text;
+    -webkit-text-fill-color: white;
+
+    // @include find-value-3pts-vw(font-size, 24, 24, 32);
+    // @include find-value-3pts-vw(line-height, 29, 29, 38);
+  }
+}
+
+.error {
+  height: 27px;
+
+  &__text {
+    display: none;
+    color: #f00;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &_show {
+    display: block;
+  }
+}

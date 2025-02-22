@@ -1,0 +1,45 @@
+@import 'public/scss/mixins';
+
+.policy {
+  &__first-screen {
+    padding: find-value-1pts-vw-fhd(220) find-value-1pts-vw-fhd(392) find-value-1pts-vw-fhd(120);
+    background: url('../../res/img/demo-fon.png') 0 0 no-repeat;
+    background-size: find-value-1pts-vw-fhd(2000) find-value-1pts-vw-fhd(510);
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: -0.08em;
+    text-align: center;
+    @include find-value-3pts-vw(font-size, 40, 80, 100);
+    @include find-value-3pts-vw(line-height, 40, 80, 100);
+
+    @include media-mobile {
+      padding: find-value-1pts-vw-mobile(116) find-value-1pts-vw-mobile(16);
+      background-position: 50% 10%;
+      background-size: find-value-1pts-vw-mobile(700) find-value-1pts-vw-mobile(350);
+      text-align: left;
+    }
+  }
+
+  &__content {
+    padding: find-value-1pts-vw-fhd(120) find-value-1pts-vw-fhd(510);
+    color: #fff;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33.6px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    @include media-mobile {
+      padding: find-value-1pts-vw-mobile(20) find-value-1pts-vw-mobile(16) find-value-1pts-vw-mobile(120);
+    }
+  }
+
+  &__article-title {
+    margin: 36px 0;
+    font-weight: 500;
+  }
+
+  &__mail {
+    display: inline-block;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,93 @@
+@import "public/scss/mixins";
+
+.partners {
+  $root: &;
+  $wrapper-height: 460px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(85 * var(--vh));
+  padding: 0 16px;
+  @include media-mobile {
+    height: auto;
+    margin: find-value-1pts-vh-mobile(105) 0 find-value-1pts-vh-mobile(120);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+    height: $wrapper-height;
+    padding: 16px 0 40px;
+    border-radius: 40px;
+    background-color: rgba(18, 18, 18, 1);
+  }
+
+  &__row {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(
+        270deg,
+        #121212 3.41%,
+        rgba(18, 18, 18, 0) 79.7%
+      );
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        #121212 3.41%,
+        rgba(18, 18, 18, 0) 79.7%
+      );
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin: 0 16px;
+    color: rgba(103, 103, 103, 1);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -1.28px;
+    text-align: left;
+  }
+
+  &__slider {
+    transition-timing-function: linear;
+  }
+
+  &__swiper-slide {
+    width: 120px;
+  }
+
+  &__company {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background-color: rgba(21, 21, 21, 1);
+  }
+}

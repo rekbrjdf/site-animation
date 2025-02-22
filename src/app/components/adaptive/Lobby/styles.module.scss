@@ -1,0 +1,25 @@
+@import "public/scss/mixins";
+
+.container{
+  position: relative;
+  width: 100%;
+  padding: 6.25vw 2vw;
+  @include media-mobile{
+    margin: find-value-1pts-vh-mobile(120) 0 find-value-1pts-vh-mobile(120);
+    padding: 0;
+  }
+
+  &__game-container{
+    > div{
+      position: sticky;
+      top: 40px;
+    }
+  }
+
+  &__title{
+    color: #fff;
+    font-weight: 400;
+    font-size: clamp(32px, 2.5vw, 48px);
+    letter-spacing: -0.1vw;
+  }
+}

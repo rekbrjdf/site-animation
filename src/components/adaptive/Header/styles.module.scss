@@ -1,0 +1,228 @@
+@import 'public/scss/mixins';
+
+.header {
+  $root: &;
+
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 100px;
+  color: #fff;
+  transition: background 0.2s ease-in;
+
+  @include media-desk {
+    display: flex;
+    align-items: center;
+  }
+
+  @include media-mobile {
+    height: 56px;
+  }
+
+  &__burger-menu {
+    @include media-desk {
+      display: none;
+    }
+
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 10px;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+    }
+
+    &::after {
+      top: 0;
+    }
+
+    &::before {
+      bottom: 0;
+    }
+  }
+
+  &__navigation-bar {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 40px;
+
+    @include media-desk {
+      justify-content: center;
+      height: 100%;
+    }
+
+    @include media-mobile {
+      flex-direction: column;
+
+      // Logo container height
+      margin-top: 56px;
+      padding: 0 16px;
+      border-radius: 0 0 40px 40px;
+      touch-action: none;
+    }
+  }
+
+  &__logo-container {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      object-fit: contain;
+      width: 168px;
+      height: 67px;
+    }
+
+    @include media-desk {
+      margin-left: 40px;
+    }
+
+    @include media-mobile {
+      width: 100%;
+      height: 56px;
+      padding: 0 16px;
+
+      img {
+        width: auto;
+        height: 22px;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include media-mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+
+  &__nav-item { 
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease-in;
+    @include media-desk {
+      padding-bottom: 4px;
+      font-weight: 500;
+
+      &:hover { 
+        border-bottom: 1px solid #fff;
+      }
+    }
+    @include media-mobile {
+      width: 100%;
+      padding-bottom: 18px;
+      border-color: #fff;
+    }
+
+    &_open {
+      border-bottom: 1px solid #fff;
+      #{$root}__child-nav-arrow { 
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__button-container {
+    @include media-desk {
+      position: absolute;
+      right: 40px;
+      bottom: auto;
+    }
+    @include media-mobile {
+      width: 100%;
+      margin-top: 54px;
+      margin-bottom: 16px;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+
+  &__child-nav-title {
+    position: relative;
+  }
+
+  &__child-nav-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    transform-origin: center top;
+
+    a {
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  &__child-nav-arrow {
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 0;
+    pointer-events: none;
+    transition: transform 0.2s linear;
+  }
+
+  &__button {
+    width: fit-content;
+  }
+
+  &_fixed {
+    position: fixed;
+    top: 0;
+    background-color: rgba(18, 18, 18, 0.2);
+    backdrop-filter: blur(12px);
+  }
+
+  &_open {
+    background-color: unset;
+    backdrop-filter: unset;
+    #{$root}__nav-list {
+      pointer-events: unset;
+      touch-action: unset;
+    }
+
+    #{$root}__button-container {
+      pointer-events: unset;
+      touch-action: unset;
+    }
+
+    #{$root}__burger-menu {
+      &::after {
+        top: 4px;
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        bottom: 4px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

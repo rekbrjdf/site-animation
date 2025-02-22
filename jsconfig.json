@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["./src/*"],
+      "@utils": ["./src/utils/functions.js"],
+      "@utils/*": ["./src/utils/*"],
+      "utils/functions": ["./src/utils/functions.js"],
+      "@components/*": ["src/components/*"],
+      "components/*": ["src/components/*"],
+      "@app/components/*": ["src/app/components/*"],
+      "utils/*": ["src/utils/*"],
+      "public*": ["public/*"]
+    }
+  }
+}

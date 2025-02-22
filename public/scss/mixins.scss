@@ -1,0 +1,106 @@
+@use 'sass:math';
+
+// Viewport Sizes
+$fhd-width: 1920;
+$fhd-height: 1080;
+
+$hd-width: 1280;
+$hd-height: 720;
+
+$mobile-base-width: 360;
+$mobile-base-height: 640;
+
+@function find-value-2pts-vw-vh($hd-value, $fhd-value) {
+  $WEIGHT: 0.5;
+  @return calc(
+    find-value-2pts-vh($WEIGHT * $hd-value, $WEIGHT * $fhd-value) +
+      find-value-2pts-vw($WEIGHT * $hd-value, $WEIGHT * $fhd-value)
+  );
+}
+
+@function find-value-2pts-vw($hd-value, $fhd-value) {
+  @return calc(
+    (
+        100vw * #{$fhd-value} - 100vw * #{$hd-value} - #{$hd-width}px * #{$fhd-value} + #{$hd-width}px *
+          #{$hd-value}
+      ) / ($fhd-width - $hd-width) + #{$hd-value}px
+  );
+}
+
+@function find-value-2pts-vh($hd-value, $fhd-value) {
+  $actual-vh: calc(var(--vh) * 100);
+  @return calc(
+    (
+        $actual-vh * #{$fhd-value} - $actual-vh * #{$hd-value} - #{$hd-height}px * #{$fhd-value} + #{$hd-height}px *
+          #{$hd-value}
+      ) / ($fhd-height - $hd-height) + #{$hd-value}px
+  );
+}
+
+@function find-value-1pts-vw-fhd($pixels) {
+  @return calc($pixels * 100vw / $fhd-width);
+}
+
+@function find-value-1pts-vh-fhd($pixels) {
+  @return calc(var(--vh) * 100 * $pixels / $fhd-height);
+}
+
+@function find-value-1pts-vw-mobile($pixels) {
+  @return calc($pixels * 100vw / $mobile-base-width);
+}
+
+@function find-value-1pts-vh-mobile($pixels) {
+  @return calc(var(--vh) * 100 * $pixels / $mobile-base-height);
+}
+
+@function find-value-1pts-vw-fhd($pixels) {
+  @return calc($pixels * 100vw / $fhd-width);
+}
+
+@function find-value-1pts-vh-fhd($pixels) {
+  @return calc(var(--vh) * 100 * $pixels / $fhd-height);
+}
+
+@mixin find-value-3pts-vw($property-name, $mobile-value, $hd-value, $fhd-value) {
+  #{$property-name}: find-value-2pts-vw($hd-value, $fhd-value);
+  @include media-mobile {
+    #{$property-name}: find-value-1pts-vw-mobile($mobile-value);
+  }
+}
+
+@mixin find-value-3pts-vh($property-name, $mobile-value, $hd-value, $fhd-value) {
+  #{$property-name}: find-value-2pts-vh($hd-value, $fhd-value);
+  @include media-mobile {
+    #{$property-name}: find-value-1pts-vh-mobile($mobile-value);
+  }
+}
+
+@mixin media-desk {
+  :global(.desktop) & {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  :global(.tablet) & {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  :global(.mobile) & {
+    @content;
+  }
+}
+
+@mixin media-landscape {
+  :global(.landscape) & {
+    @content;
+  }
+}
+
+@mixin media-iphone {
+  :global(.iphone) & {
+    @content;
+  }
+}

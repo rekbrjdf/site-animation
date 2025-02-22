@@ -1,0 +1,13 @@
+@import 'public/scss/mixins';
+
+.wrapper {
+  display: block;
+  background: #0c0c0c;
+  background: #0c0c0c url('../res/img/fon.webp') 0 0 no-repeat;
+  @include media-desk {
+    background-size: contain;
+  }
+  @include media-mobile {
+    background-position: 47% -3%;
+  }
+}

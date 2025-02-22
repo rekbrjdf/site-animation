@@ -1,0 +1,84 @@
+@import 'public/scss/mixins';
+
+.about {
+  &__section {
+    @include find-value-3pts-vw(margin-top, 60, 80, 120);
+    @include find-value-3pts-vw(margin-bottom, 60, 80, 120);
+
+    padding: 0 40px;
+
+    @include media-mobile {
+      padding: 0 16px;
+    }
+
+    &-bottom {
+      @include find-value-3pts-vw(margin-top, -20, -20, -60);
+      @include find-value-3pts-vw(margin-bottom, 80, 120, 180);
+
+      @include media-mobile {
+        margin-top: 0;
+        padding: 0 16px;
+      }
+    }
+  }
+
+  &__slogan {
+    @include find-value-3pts-vw(font-size, 32, 40, 48);
+    @include find-value-3pts-vw(letter-spacing, -1.28, -0.96, -1.28);
+
+    margin-bottom: 40px;
+    color: white;
+    line-height: 100%;
+
+    @include media-mobile {
+      line-height: normal;
+    }
+
+    &-bottom {
+      width: 700px;
+      margin: 0 auto;
+      color: white;
+      font-size: 32px;
+      line-height: normal;
+      letter-spacing: -1.28px;
+      text-align: center;
+
+      @include media-mobile {
+        width: auto;
+        font-size: 24px;
+        letter-spacing: -0.96px;
+      }
+    }
+  }
+
+  &__introduction {
+    display: grid;
+    grid-template:
+      'a c'
+      'b c'
+      / 0fr 1fr;
+    gap: 0 17%;
+    color: rgba(103, 103, 103, 1);
+
+    @include media-mobile {
+      display: grid;
+      grid-template: none / 1fr;
+    }
+
+    &-text {
+      @include find-value-3pts-vw(font-size, 24, 24, 32);
+      @include find-value-3pts-vw(letter-spacing, -1.28, -1.6, -1.92);
+
+      display: flex;
+      flex-direction: column;
+      grid-area: c;
+      gap: 40px;
+      line-height: normal;
+
+      @include media-mobile {
+        grid-area: 2;
+        gap: 32px;
+      }
+    }
+  }
+}

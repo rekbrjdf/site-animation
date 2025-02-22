@@ -1,0 +1,30 @@
+[
+  [
+    {
+      "img": "bj-card-placeholder.jpg",
+      "title": "Game Presenters Academy"
+    },
+    {
+      "img": "cr-card-placeholder.jpg",
+      "title": "Quality Control and Monitoring"
+    },
+    {
+      "img": "keno-card-placeholder.jpg",
+      "title": "Personnel Selection Process"
+    }
+  ],
+  [
+    {
+      "description": "Our hosts receive extensive training in gaming fundamentals, finger flexibility, and logical thinking. They use specialized apps for tracking progress and attend acting and speech classes. English lessons focus on conversational skills and player communication.",
+      "icon": "card-icon-placeholder.png"
+    },
+    {
+      "description": "Pit Bosses and the QA team ensure game quality 24/7, correcting errors and providing monthly feedback to employees for improvement.",
+      "icon": "card-icon-placeholder.png"
+    },
+    {
+      "description": "Our rigorous hiring process includes initial screening, casting, English assessments, and final approval by management before onboarding.",
+      "icon": "card-icon-placeholder.png"
+    }
+  ]
+]

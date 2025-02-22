@@ -1,0 +1,26 @@
+@import "public/scss/mixins";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px; 
+  padding-right: find-value-1pts-vh-fhd(40);
+  padding-left: find-value-1pts-vh-fhd(40);
+  border: 0.1rem solid transparent;;
+  border-radius: 100px;
+  background: #fff;
+  color: #676767; 
+  font-weight: 500;
+  cursor: pointer;
+  transition: margin 0.25s linear, height 0.25s linear;
+
+  &:hover{
+    height: 60px;
+    margin: 0 4px;
+  }
+
+  @include find-value-3pts-vw(font-size, 18, 18, 20);
+}
+

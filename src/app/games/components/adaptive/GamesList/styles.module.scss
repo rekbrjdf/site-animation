@@ -1,0 +1,161 @@
+@import "public/scss/mixins";
+
+.games-list {
+    display: flex;
+    flex-direction: column;
+    margin: 120px 0;
+
+    @include media-mobile {
+        margin: 60px 0;
+    }
+
+    &__settings-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+        text-wrap: nowrap;
+
+        @include media-mobile {
+            gap: 0;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__settings-text {
+        left: 0;
+        width: 50%;
+        color: white;
+        @include find-value-3pts-vw (font-size, 32, 40, 48);
+
+        letter-spacing: -1.92px;
+    }
+
+    &__settings-buttons {
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+        border-radius: 90px;
+        background-color: #121212;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__button {
+        padding: 4px;
+        border-radius: 30px;
+        background-color: #191919;
+        cursor: pointer;
+    }
+
+    &__cards-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include media-mobile {
+            gap: 16px;
+        }
+    }
+
+    &__cards_table-view {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: find-value-2pts-vw(443, 680);
+    }
+
+    &__card-wrapper {
+        @include find-value-3pts-vw (height, 460, 443, 680);
+
+        position: relative;
+        border-radius: 40px;
+
+        @include media-mobile {
+            max-height: 460px;
+            border-radius: 24px;
+        }
+    }
+
+    &__card-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 24px;
+        color: white;
+        @include find-value-3pts-vw (font-size, 32, 40, 64);
+
+        @include media-mobile {
+            padding: 16px;
+        }
+    }
+
+    &__card-background {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+
+        @include media-mobile {
+            border-radius: 24px;
+        }
+    }
+
+
+    &__card-tags-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 24px;
+
+        @include media-mobile {
+            bottom: 67px;
+            flex-direction: column;
+            padding: 16px;
+        }
+    }
+
+    &__tag-live-wrapper {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        align-self: flex-start;
+        padding: 8px 16px;
+        border-radius: 90px;
+        background-color: #FFF;
+    }
+
+    &__tag-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    &__tag-text {
+        padding: 8px 16px;
+        border: 1px solid #E0E0E00F;
+        border-radius: 90px;
+        background-color: #E0E0E00D;
+        color: #FFFFFF8A;
+        letter-spacing: -1.92px;
+        white-space: nowrap;
+        backdrop-filter: blur(22.5px);
+        @include find-value-3pts-vw (font-size, 16, 22, 24);
+        @include find-value-3pts-vw (line-height, 19.36, 21.78, 29.05);
+    }
+
+    &__tag-live-text {
+        padding: 0;
+        color: #A5A3A3;
+
+    }
+
+    &_white-svg path {
+        fill: white;
+    }
+}

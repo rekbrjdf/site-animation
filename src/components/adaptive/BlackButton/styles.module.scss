@@ -1,0 +1,24 @@
+@import "public/scss/mixins";
+
+.button {
+  align-self: center;
+  padding: 16px 40px;
+  border: 1px solid #FFF;
+  border-radius: 90px;
+  background-color: transparent;
+  color:#FFF;
+  outline: none;
+  @include find-value-3pts-vw(font-size, 18, 20, 18);
+  @include find-value-3pts-vw(line-height, 21.8, 21.8, 24.2);
+  @include media-mobile {
+    align-self: flex-start;
+  }
+
+  &_active {
+    &:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}

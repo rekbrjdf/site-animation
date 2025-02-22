@@ -1,0 +1,74 @@
+@import 'public/scss/mixins';
+
+.modal {
+  position: fixed;
+  z-index: 7;
+  width: 456px;
+  padding: 32px;
+  background-color: #181818;
+  color: white;
+  @include find-value-3pts-vw(bottom, 16, 40, 40);
+  @include find-value-3pts-vw(right, 0, 40, 40);
+  @include find-value-3pts-vw(border-radius, 32, 40, 40);
+  @include media-mobile {
+    width: auto;
+    margin: 0 16px;
+    padding: 16px;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    @include find-value-3pts-vw(font-size, 24, 32, 32);
+
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1.28px;
+  }
+
+  &__button {
+    border: none;
+    background: none;
+    color: #676767;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__white-button {
+    padding: 16px 40px;
+    border: 0.1rem solid transparent;
+    border-radius: 100px;
+    background: #fff;
+    color: #060606;
+    font-weight: 500;
+    line-height: 24.2px;
+    @include find-value-3pts-vw(font-size, 18, 20, 20);
+  }
+
+  &__modal-content {
+    margin-bottom: 64px;
+    color: #676767;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    @include find-value-3pts-vw(font-size,18, 20, 20);
+  }
+
+  &__modal-control {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  &__read-more {
+    padding: 16px 24px;
+    @include find-value-3pts-vw(font-size,18, 18, 18);
+  }
+}

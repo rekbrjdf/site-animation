@@ -1,0 +1,116 @@
+@import 'public/scss/mixins';
+
+.wrapper {
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__send-form {
+    @include media-mobile {
+      order: 2;
+    }
+  }
+
+  & section {
+    padding: 0 40px;
+    @include find-value-3pts-vw(margin-bottom, 60, 80, 120);
+    @include find-value-3pts-vw(margin-top, 60, 80, 120);
+
+    @include media-mobile {
+      padding: 0 16px;
+    }
+  }
+
+  &__contacts {
+    @include find-value-3pts-vw(margin-bottom, 0, 160, 240);
+  }
+
+  &__contact {
+    display: grid;
+    grid-template: auto / 47.8% 1fr 289px;
+    grid-template-areas: 'position name button';
+    padding: find-value-2pts-vw(40, 32) 0;
+    border-bottom: 1.5px solid #676767;
+    font-weight: 400;
+    font-size: find-value-2pts-vw(24, 48);
+    letter-spacing: -0.04em;
+    text-align: left;
+    @include media-mobile {
+      grid-template: repeat(3, auto) / find-value-1pts-vw-mobile(289) auto;
+      grid-template-areas:
+        'position position'
+        'name name'
+        'button .';
+      padding: 40px 0;
+      letter-spacing: -1.92px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__position {
+    grid-area: position;
+    color: #676767;
+    @include media-mobile {
+      font-size: find-value-1pts-vw-mobile(18);
+    }
+  }
+
+  &__name {
+    grid-area: name;
+    align-self: center;
+    color: #fff;
+    @include media-mobile {
+      align-self: flex-start;
+      padding: find-value-1pts-vw-mobile(24) 0;
+      font-size: find-value-1pts-vw-mobile(32);
+      line-height: 38.73px;
+    }
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    margin-bottom: find-value-2pts-vw(160, 180);
+    padding: 0 40px;
+    @include media-mobile {
+      flex-wrap: wrap;
+      gap: find-value-1pts-vw-mobile(16);
+      order: 4;
+      margin-top: find-value-1pts-vw-mobile(60);
+      margin-bottom: 80px;
+      padding: 0 16px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #121212;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: -1.92px;
+    text-align: left;
+    @include find-value-3pts-vw(height, 390, 450, 600);
+    @include find-value-3pts-vw(padding, 16, 24, 24);
+    @include find-value-3pts-vw(font-size, 32, 32, 48);
+    @include find-value-3pts-vw(line-height, 32, 32, 48);
+    @include find-value-3pts-vw(border-radius, 24, 40, 40);
+  }
+
+  &__link {
+    width: fit-content;
+  }
+
+  &__card-text {
+    &_grey {
+      color: #676767;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import 'public/scss/mixins';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #fff;
+  @include find-value-3pts-vw(padding, 16, 24, 24);
+  @include find-value-3pts-vw(border-radius, 24, 40, 40);
+
+  &__title {
+    @include find-value-3pts-vw(font-size, 32, 32, 48);
+    @include find-value-3pts-vw(line-height, 29, 39, 58);
+
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+  }
+
+  &__input-wrapper {
+    flex-grow: 1;
+  }
+
+  &__message {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  &__send-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include media-mobile {
+      flex-direction: column-reverse;
+      gap: 24px;
+    }
+  }
+
+  &__warning {
+    color: #676767;
+    @include find-value-3pts-vw(font-size, 16, 16, 20);
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
