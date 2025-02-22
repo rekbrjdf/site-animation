@@ -22,7 +22,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }) {
+export async function BlogPost({ params }) {
+  // Изменено на именованный экспорт
   const { id } = params;
   const post = await fetch(`${getApiHost()}/news-posts/${id}`).then((res) => res.json());
 
