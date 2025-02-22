@@ -35,7 +35,7 @@ const pageData = {
       demoSlogan: (() => (
         <>
           Ready to put your luck to the <br />
-          test? 
+          test?
           <span className="white-text"> Jump into the demo!</span>
         </>
       ))(),
