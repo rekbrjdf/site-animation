@@ -8,7 +8,7 @@ const bc = bindClasses(classes, 'news-card');
 
 function NewsCard({ label, title, date, id, pic }) {
   return (
-    <Link className={bc.__link} href={`/blog/${id}`}>
+    <Link className={bc.__link} href={'#'}>
       <div className={classes['news-card']}>
         <div className={bc['__flex-top']}>
           <Image
