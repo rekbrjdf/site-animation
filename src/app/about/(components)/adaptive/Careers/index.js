@@ -1,6 +1,6 @@
 import React from 'react';
 import { getApiHost } from 'utils/functions';
-import Accordion from './Accordion';
+// import Accordion from './Accordion';
 import styles from './styles.module.scss';
 
 export default async function Careers() {
@@ -12,7 +12,7 @@ export default async function Careers() {
       {list && (
         <>
           <h2 className={styles.title}>Available Positions</h2>
-          <Accordion list={list} />
+          {/* <Accordion list={list} /> */}
         </>
       )}
     </div>

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import classNames from 'classnames';
 import FirstScreen from 'components/adaptive/FirstScreen';
 import Circles from './(components)/adaptive/Circles';
-import Careers from './(components)/adaptive/Careers';
+// import Careers from './(components)/adaptive/Careers';
 import classes from './styles.module.scss';
 
 const inter = Inter({
@@ -53,9 +53,7 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className={bc.__section}>
-          <Careers />
-        </section>
+        <section className={bc.__section}>{/* <Careers /> */}</section>
         <section className={bc['__section-bottom']}>
           <div className={bc['__slogan-bottom']}>
             <p>Join us as we revolutionize the world of gaming, one awesome game at a time! 🚀</p>
