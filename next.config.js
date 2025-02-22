@@ -26,8 +26,8 @@ const nextConfig = {
     fileLoaderRule.exclude = /\.svg$/i;
     return config;
   },
-  output: 'standalone',
-  // basePath: '/site-animation',
+  output: 'export',
+  basePath: '/site-animation',
   images: {
     remotePatterns: [
       {
