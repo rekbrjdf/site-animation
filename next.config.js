@@ -3,9 +3,7 @@ const withVideos = require('next-videos')
 const nextConfig = {
   webpack: (config, ctxWebpack) => {
     // Получаем текущие конфиги
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
-    );
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
     config.module.rules.push(
       {
         ...fileLoaderRule,
@@ -18,21 +16,23 @@ const nextConfig = {
         issuer: fileLoaderRule.issuer,
         use: [
           {
-            loader: "@svgr/webpack",
+            loader: '@svgr/webpack',
           },
         ],
-      }
+      },
     );
 
     // Исключаем обработку свг из текущий правил nextjs
     fileLoaderRule.exclude = /\.svg$/i;
     return config;
   },
+  output: 'export',
+  basePath: '/site-animation',
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "storage.googleapis.com",
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
       },
     ],
   },
